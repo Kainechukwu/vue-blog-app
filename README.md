@@ -1,6 +1,6 @@
-# [![](https://img.shields.io/static/v1?label=Sponsor+%F0%9F%91%89&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/richardevcom) Vue 3 boilerplate - Vite, Pinia, Vue Router & Tailwind CSS
+# [![](https://img.shields.io/static/v1?label=Sponsor+%F0%9F%91%89&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/kainecom) Vue 3 boilerplate - Vite, Pinia, Vue Router & Tailwind CSS
 
-This boilerplate was created as part of my [custom Vue 3 boilerpalte tutorial](https://medium.com/@richardevcom/custom-vue3-boilerplate-9635806acde3). It will help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This boilerplate was created as part of my [custom Vue 3 boilerpalte tutorial](https://medium.com/@kainecom/custom-vue3-boilerplate-9635806acde3). It will help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Support & collaboration
 
@@ -23,13 +23,13 @@ This boilerplate was created as part of my [custom Vue 3 boilerpalte tutorial](h
 ## Install
 
 ```
-npm i @richardev/vue3-boilerplate
+npm i @kaine/vue3-boilerplate
 ```
 
 or
 
 ```
-git clone https://github.com/richardevcom/vue3-boilerplate.git
+git clone https://github.com/kainecom/vue3-boilerplate.git
 ```
 
 then

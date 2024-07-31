@@ -2,7 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        error: '#A62919',
+        light: '#eeeeee',
+        green: '#00bd7e'
+      }
+    }
   },
   plugins: []
 }
