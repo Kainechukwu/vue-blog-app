@@ -14,7 +14,7 @@
 
           <div v-if="posts.length > 0 && !loading" class="space-y-16">
             <div v-for="post in posts" :key="post.id" class="">
-              <PostCard :post="post" />
+              <PostCard @Click="() => goToPostDetail(post.id)" :post="post" />
             </div>
           </div>
         </div>
@@ -23,16 +23,18 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import PostCard from './PostCard.vue'
 import { computed, onMounted, ref } from 'vue'
 import { usePostStore } from '@/stores/post'
 import PostsLoader from '@/components/loaders/PostsLoader.vue'
 import { debounce } from 'lodash'
-
+import { useRouter } from 'vue-router'
 onMounted(() => {
   debouncedFetch()
 })
+
+const router = useRouter()
 
 const store = usePostStore()
 const loading = ref(true)
@@ -40,7 +42,10 @@ const loading = ref(true)
 const posts = computed(() => store.posts)
 
 const debouncedFetch = debounce(() => {
-  // posts.value = computed(() => store.posts)
   loading.value = false
 }, 2000)
+
+const goToPostDetail = (id: string) => {
+  router.push(`post-detail/${id}`)
+}
 </script>

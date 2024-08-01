@@ -28,6 +28,6 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.vue", "**/*.vue", "src/main.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

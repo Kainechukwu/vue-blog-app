@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="">
         <nav class="flex">
           <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/create">Create Post</RouterLink>
+          <RouterLink to="/create">Add Post</RouterLink>
         </nav>
       </div>
     </header>
@@ -22,7 +22,6 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
 
 nav {
   width: 100%;
