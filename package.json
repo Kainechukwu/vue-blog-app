@@ -16,7 +16,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@braid/vue-formulate": "^2.5.3",
+    "lodash": "^4.17.21",
     "pinia": "^2.1.7",
+    "vite-tsconfig-paths": "^4.3.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
