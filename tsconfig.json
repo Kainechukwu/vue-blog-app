@@ -47,6 +47,6 @@
     "tests/**/*.js",
     "tests/**/*.mjs"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  // "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }

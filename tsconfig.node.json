@@ -20,6 +20,7 @@
     "typeRoots": ["./node_modules/@types"],
     "importHelpers": true,
     "noEmit": true,
+    "composite": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
@@ -47,6 +48,5 @@
     "tests/**/*.js",
     "tests/**/*.mjs"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }
