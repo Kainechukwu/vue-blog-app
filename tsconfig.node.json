@@ -1,10 +1,52 @@
 {
   "compilerOptions": {
-    "composite": true,
+    "target": "esnext",
+    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "useUnknownInCatchVariables": false
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "useUnknownInCatchVariables": false,
+    "lib": ["esnext", "dom", "ESNext.AsyncIterable"],
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "types": ["jest"],
+    "noImplicitAny": false,
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types"],
+    "importHelpers": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["src/*"],
+      // "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@api/*": ["api/*"],
+      "@modules/*": ["modules/*"],
+      "@composables/*": ["composables/*"],
+      "@store/*": ["store/*"],
+      "@plugins/*": ["plugins/*"],
+      "@assets/*": ["assets/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
-  "include": ["vite.config.dev.ts", "vite.config.prod.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.vue",
+    "**/*.vue",
+    "src/main.js",
+    "tests/**/*.ts",
+    "tests/**/*.js",
+    "tests/**/*.mjs"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["node_modules"]
 }

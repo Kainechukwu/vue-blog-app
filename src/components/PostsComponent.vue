@@ -12,9 +12,9 @@
             <PostsLoader />
           </div>
 
-          <div v-if="posts.length > 0 && !loading" class="space-y-16">
+          <div v-if="!loading && posts.length > 0" class="space-y-16">
             <div v-for="post in posts" :key="post.id" class="">
-              <PostCard @Click="() => goToPostDetail(post.id)" :post="post" />
+              <PostCard @click="() => goToPostDetail(post.id)" :post="post" />
             </div>
           </div>
         </div>
@@ -23,29 +23,30 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import PostCard from './PostCard.vue'
-import { computed, onMounted, ref } from 'vue'
-import { usePostStore } from '@/stores/post'
-import PostsLoader from '@/components/loaders/PostsLoader.vue'
-import { debounce } from 'lodash'
-import { useRouter } from 'vue-router'
+<script lang="ts" setup>
+import PostCard from './PostCard.vue';
+import { computed, onMounted, ref } from 'vue';
+import { usePostStore } from '../stores/post';
+import PostsLoader from '../components/loaders/PostsLoader.vue';
+import { debounce } from 'lodash';
+import { useRouter } from 'vue-router';
+
 onMounted(() => {
-  debouncedFetch()
-})
+  debouncedFetch();
+});
 
-const router = useRouter()
+const router = useRouter();
 
-const store = usePostStore()
-const loading = ref(true)
+const store = usePostStore();
+const loading = ref(true);
 
-const posts = computed(() => store.posts)
+const posts = computed(() => store.posts);
 
 const debouncedFetch = debounce(() => {
-  loading.value = false
-}, 2000)
+  loading.value = false;
+}, 2000);
 
 const goToPostDetail = (id: string) => {
-  router.push(`post-detail/${id}`)
-}
+  router.push(`post-detail/${id}`);
+};
 </script>

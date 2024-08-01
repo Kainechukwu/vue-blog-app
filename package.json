@@ -1,21 +1,18 @@
 {
   "name": "@kaine/vue3-boilerplate",
-  "description": "Quick boilerplate for your next project, containing - Vite, Vuex, Vue Router & Tailwind CSS. This was created as part of my tutorial series.",
-  "private": false,
-  "type": "module",
   "version": "1.1.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kainecom/vue3-boilerplate.git"
-  },
+  "private": false,
+  "description": "Quick boilerplate for your next project, containing - Vite, Vuex, Vue Router & Tailwind CSS. This was created as part of my tutorial series.",
+  "author": "kainecom <hello@kaine.com> (https://github.com/kainecom/)",
   "scripts": {
-    "dev": "vite --config='vite.config.dev.ts'",
     "build": "vite build  --config='vite.config.prod.ts'",
-    "preview": "vite preview --config='./vite.config.prod.ts'",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.ts --fix --ignore-path .gitignore",
+    "dev": "vite --config='vite.config.dev.ts'",
     "format": "prettier --write src/",
-    "jest": "jest",
-    "test:unit": "vue-cli-service test:unit"
+    "jest": "vue-cli-service test:unit",
+    "preview": "vite preview --config='./vite.config.prod.ts'",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "@braid/vue-formulate": "^2.5.3",
@@ -24,19 +21,24 @@
     "pinia": "^2.1.7",
     "vee-validate": "^4.13.2",
     "vite-tsconfig-paths": "^4.3.2",
-    "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vue-toastification": "^1.7.14",
     "vue-uuid": "^3.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-typescript": "^7.24.7",
     "@rushstack/eslint-patch": "^1.8.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^22.0.2",
     "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
     "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
     "autoprefixer": "^10.4.19",
     "babel-jest": "^29.7.0",
     "cssnano": "^7.0.4",
@@ -47,10 +49,14 @@
     "prettier": "^3.2.5",
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.7",
+    "ts-jest": "^27.0.0",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",
-    "vue-jest": "^3.0.7"
+    "vue": "^3.4.35",
+    "vue-jest": "^0.6.1",
+    "vue-loader": "^17.4.2"
   },
   "keywords": [
     "vue",
@@ -86,8 +92,9 @@
     "vue3 enterprise starter",
     "vue 3 enterprise starter"
   ],
-  "jest": {
-    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kainecom/vue3-boilerplate.git"
   },
-  "author": "kainecom <hello@kaine.com> (https://github.com/kainecom/)"
+  "type": "module"
 }

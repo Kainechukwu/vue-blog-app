@@ -11,12 +11,20 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "useUnknownInCatchVariables": false,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "ESNext.AsyncIterable"],
     "skipLibCheck": true,
     "baseUrl": "src",
-    "types": ["vite/client"],
+    "types": ["jest"],
+    "noImplicitAny": false,
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types"],
+    "importHelpers": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@/*": ["*"],
+      "@/*": ["src/*"],
+      // "@/*": ["*"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@api/*": ["api/*"],
@@ -28,6 +36,17 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "**/*.vue", "src/main.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.vue",
+    "**/*.vue",
+    "src/main.js",
+    "tests/**/*.ts",
+    "tests/**/*.js",
+    "tests/**/*.mjs"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["node_modules"]
 }
