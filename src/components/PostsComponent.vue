@@ -24,10 +24,13 @@
 </template>
 
 <script setup>
+// importing a post card that will contain a single post
 import PostCard from './PostCard.vue';
 import { computed, onMounted, ref } from 'vue';
 import { usePostStore } from '../stores/post';
+// importing posts loader component that displays while posts are loading
 import PostsLoader from '../components/loaders/PostsLoader.vue';
+//debounce to simulate delay in api function response
 import { debounce } from 'lodash';
 import { useRouter } from 'vue-router';
 
@@ -46,6 +49,7 @@ const debouncedFetch = debounce(() => {
   loading.value = false;
 }, 2000);
 
+// goToPostDetail to route user see details of a single post
 const goToPostDetail = (id) => {
   router.push(`post-detail/${id}`);
 };
