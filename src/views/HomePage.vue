@@ -4,6 +4,7 @@ import PostsComponent from '@/components/PostsComponent.vue';
 
 <template>
   <main>
+
     <PostsComponent />
   </main>
 </template>

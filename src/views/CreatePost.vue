@@ -57,7 +57,7 @@ import * as yup from 'yup';
 import { useField, useForm } from 'vee-validate';
 import { ref } from 'vue';
 import { uuid } from 'vue-uuid';
-import { IPost } from '@/utils';
+// import { IPost } from '@/utils';
 import { useRouter } from 'vue-router';
 
 const store = usePostStore();

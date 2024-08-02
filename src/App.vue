@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div class="min-w-screen px-8">
-    <header>
+    <header class="sticky top-0 z-10">
       <div class="">
         <nav class="flex">
           <RouterLink to="/">Home</RouterLink>
@@ -21,6 +21,7 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  background-color: var(--vt-c-black);
 }
 
 nav {
