@@ -12,9 +12,10 @@
     "format": "prettier --write src/",
     "jest": "vue-cli-service test:unit",
     "preview": "vite preview --config='./vite.config.prod.ts'",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.24.7",
     "@braid/vue-formulate": "^2.5.3",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "lodash": "^4.17.21",

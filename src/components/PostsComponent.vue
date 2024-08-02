@@ -1,31 +1,3 @@
-<script lang="ts" setup>
-import PostCard from './PostCard.vue';
-import { computed, onMounted, ref } from 'vue';
-import { usePostStore } from '../stores/post';
-import PostsLoader from '../components/loaders/PostsLoader.vue';
-import { debounce } from 'lodash';
-import { useRouter } from 'vue-router';
-
-onMounted(() => {
-  debouncedFetch();
-});
-
-const router = useRouter();
-
-const store = usePostStore();
-const loading = ref(true);
-
-const posts = computed(() => store.posts);
-
-const debouncedFetch = debounce(() => {
-  loading.value = false;
-}, 2000);
-
-const goToPostDetail = (id: string) => {
-  router.push(`post-detail/${id}`);
-};
-</script>
-
 <template>
   <div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -50,3 +22,31 @@ const goToPostDetail = (id: string) => {
     </div>
   </div>
 </template>
+
+<script setup>
+import PostCard from './PostCard.vue';
+import { computed, onMounted, ref } from 'vue';
+import { usePostStore } from '../stores/post';
+import PostsLoader from '../components/loaders/PostsLoader.vue';
+import { debounce } from 'lodash';
+import { useRouter } from 'vue-router';
+
+onMounted(() => {
+  debouncedFetch();
+});
+
+const router = useRouter();
+
+const store = usePostStore();
+const loading = ref(true);
+
+const posts = computed(() => store.posts);
+
+const debouncedFetch = debounce(() => {
+  loading.value = false;
+}, 2000);
+
+const goToPostDetail = (id) => {
+  router.push(`post-detail/${id}`);
+};
+</script>

@@ -59,11 +59,9 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup >
 import { computed, onMounted, ref } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
-import { IPost } from '@/utils'
-
 import { debounce } from 'lodash';
 import { usePostStore } from '../stores/post';
 import PostLoader from '../components/loaders/PostLoader.vue';
@@ -74,12 +72,12 @@ onMounted(() => {
 
 const route = useRoute();
 const store = usePostStore();
-const id = computed(() => route.params.id as string);
-const post = ref<IPost | null>(null);
+const id = computed(() => route.params.id);
+const post = ref(null);
 const loading = ref(true);
 
 const debouncedFetch = debounce(() => {
-  post.value = store.getPostById(id.value) as IPost;
+  post.value = store.getPostById(id.value);
   loading.value = false;
 }, 2000);
 </script>
