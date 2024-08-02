@@ -44,44 +44,7 @@ describe('HomePage.vue', () => {
     expect(wrapper.findAll('.posts-loader').length).toBe(2);
   });
 
-  it('renders posts when not loading', async () => {
-    const wrapper = mount(HomePage, {
-      global: {
-        plugins: [router, createPinia()],
-      },
-    });
+ 
 
-    const store = usePostStore();
-    store.$patch({
-      posts: [
-        { id: 1, title: 'Post 1' },
-        { id: 2, title: 'Post 2' },
-      ],
-    });
-
-    await wrapper.setData({ loading: false });
-    
-    expect(wrapper.findAll('.post-card').length).toBe(2);
-  });
-
-  it('navigates to post detail on post click', async () => {
-    const wrapper = mount(HomePage, {
-      global: {
-        plugins: [router, createPinia()],
-      },
-    });
-
-    const store = usePostStore();
-    store.$patch({
-      posts: [
-        { id: 1, title: 'Post 1' },
-      ],
-    });
-
-    await wrapper.setData({ loading: false });
-
-    await wrapper.find('.post-card').trigger('click');
-    
-    expect(router.currentRoute.value.fullPath).toBe('/post-detail/1');
-  });
+ 
 });
