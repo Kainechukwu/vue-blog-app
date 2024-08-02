@@ -49,51 +49,51 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import TextInput from '@/components/input/TextInput.vue'
-import TextArea from '@/components/input/TextArea.vue'
-import { usePostStore } from '@/stores/post'
-import * as yup from 'yup'
-import { useField, useForm } from 'vee-validate'
-import { ref } from 'vue'
-import { uuid } from 'vue-uuid'
-import { IPost } from '@/utils'
-import { useRouter } from 'vue-router'
+<script setup>
+import TextInput from '@/components/input/TextInput.vue';
+import TextArea from '@/components/input/TextArea.vue';
+import { usePostStore } from '@/stores/post';
+import * as yup from 'yup';
+import { useField, useForm } from 'vee-validate';
+import { ref } from 'vue';
+import { uuid } from 'vue-uuid';
+// import { IPost } from '@/utils';
+import { useRouter } from 'vue-router';
 
-const store = usePostStore()
-const router = useRouter()
-const isLoading = ref(false)
+const store = usePostStore();
+const router = useRouter();
+const isLoading = ref(false);
 const schema = yup.object({
   title: yup.string().required('This field is required'),
   author: yup.string().required('This field is required'),
   description: yup.string().required('This field is required')
-})
+});
 
 const formValues = {
   id: '',
   title: '',
   author: '',
   description: ''
-}
+};
 
 const { handleSubmit, resetForm } = useForm({
   validationSchema: schema,
   initialValues: formValues
-})
+});
 
-const { value: title, errorMessage: titleError } = useField('title')
-const { value: author, errorMessage: authorError } = useField('author')
-const { value: description, errorMessage: descriptionError } = useField('description')
+const { value: title, errorMessage: titleError } = useField('title');
+const { value: author, errorMessage: authorError } = useField('author');
+const { value: description, errorMessage: descriptionError } = useField('description');
 
-const onSubmit = handleSubmit((values: IPost) => {
-  console.log('🚀 ~ onSubmit ~ values:', values)
+const onSubmit = handleSubmit((values) => {
+  console.log('🚀 ~ onSubmit ~ values:', values);
   store.addPost({
     ...values,
     id: uuid.v1()
-  })
-  resetForm()
-  router.push('/')
-})
+  });
+  resetForm();
+  router.push('/');
+});
 </script>
 
 <style scoped></style>

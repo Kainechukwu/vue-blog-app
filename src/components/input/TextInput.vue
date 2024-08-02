@@ -31,7 +31,6 @@
         :validate="validate"
         v-if="!isMask"
       />
-    
     </div>
 
     <span
@@ -59,9 +58,8 @@
     }}</span>
   </div>
 </template>
-<script lang="ts">
+<script>
 export default {
- 
   props: {
     placeholder: {
       type: String,
@@ -134,15 +132,15 @@ export default {
   data() {
     return {
       types: this.type
-    }
+    };
   },
 
   methods: {
     toggleType() {
       // toggle the type of the input field
-      this.types = this.types === 'text' ? 'password' : 'text'
+      this.types = this.types === 'text' ? 'password' : 'text';
     }
   }
-}
+};
 </script>
 <style lang="scss"></style>

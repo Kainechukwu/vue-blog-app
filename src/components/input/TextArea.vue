@@ -55,7 +55,7 @@
     }}</span>
   </div>
 </template>
-<script lang="ts">
+<script>
 export default {
   props: {
     placeholder: {
@@ -115,7 +115,7 @@ export default {
   data() {
     return {
       types: this.type
-    }
+    };
   },
   methods: {
     // toggleType() {
@@ -123,6 +123,6 @@ export default {
     //   this.types = this.types === 'text' ? 'password' : 'text'
     // }
   }
-}
+};
 </script>
 <style lang="scss"></style>

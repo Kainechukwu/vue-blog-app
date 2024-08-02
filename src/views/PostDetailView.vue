@@ -19,7 +19,7 @@
           </div>
         </RouterLink>
 
-        <div v-if="loading" class="mt-4"><PostLoader /></div>
+        <div v-if="loading" class="mt-4"><PostLoader /></div> 
         <article
           v-if="loading === false && post !== null"
           class="mt-4 p-3 flex space-x-4 cursor-pointer rounded-lg"
@@ -59,28 +59,27 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
-
-import { debounce } from 'lodash'
-import { usePostStore } from '@/stores/post'
-import PostLoader from '@/components/loaders/PostLoader.vue'
+<script setup >
+import { computed, onMounted, ref } from 'vue';
+import { useRoute, RouterLink } from 'vue-router';
+import { debounce } from 'lodash';
+import { usePostStore } from '../stores/post';
+import PostLoader from '../components/loaders/PostLoader.vue';
 
 onMounted(() => {
-  debouncedFetch()
-})
+  debouncedFetch();
+});
 
-const route = useRoute()
-const store = usePostStore()
-const id = computed(() => route.params.id as string)
-const post = ref(null)
-const loading = ref(true)
+const route = useRoute();
+const store = usePostStore();
+const id = computed(() => route.params.id);
+const post = ref(null);
+const loading = ref(true);
 
 const debouncedFetch = debounce(() => {
-  post.value = store.getPostById(id.value)
-  loading.value = false
-}, 2000)
+  post.value = store.getPostById(id.value);
+  loading.value = false;
+}, 2000);
 </script>
 
 <style scoped></style>

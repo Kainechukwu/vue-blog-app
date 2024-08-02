@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { IPost } from '@/utils'
+// import { IPost } from '@/utils'
 export const usePostStore = defineStore('posts', () => {
-  const posts = ref<IPost[]>([
+  const posts = ref([
     {
       id: '1',
       title: 'Boost your conversion rate',
@@ -23,13 +23,13 @@ export const usePostStore = defineStore('posts', () => {
     }
   ])
   const name = ref('My Posts')
-  function addPost(post: IPost) {
+  function addPost(post) {
     posts.value.push(post)
   }
 
-  function getPostById(id: string) {
+  function getPostById(id) {
     return posts.value.find(post => post.id === id)
   }
 
   return { posts, addPost, getPostById }
-})
+}, {persist: true,})

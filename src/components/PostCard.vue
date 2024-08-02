@@ -1,9 +1,9 @@
 <template>
   <article
-    class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#00bd7e33] p-3 flex  space-x-4 cursor-pointer rounded-lg"
+    class="transition duration-300 ease-in-out transform hover:scale-105 hover:bg-[#00bd7e33] p-3 flex space-x-4 cursor-pointer rounded-lg"
   >
     <div
-      class="rounded-full bg-slate-700 h-10 w-10 flex items-center justify-center text-xl font-bold border-light border"
+      class="rounded-full bg-slate-700 h-10 w-10 flex items-center justify-center text-xl font-bold border-light border uppercase"
     >
       {{ post.author[0] }}
     </div>
@@ -34,13 +34,12 @@
   </article>
 </template>
 
-<script setup lang="ts">
-import { defineProps } from 'vue'
-import { IPost } from '@/utils'
+<script setup>
+import { defineProps } from 'vue';
 
-const props = defineProps<{ post: IPost }>()
+const props = defineProps(['post']);
 
-const { post } = props
+const { post } = props;
 </script>
 
 <style lang="scss" scoped></style>
